@@ -1,0 +1,58 @@
+Prog MAIN /*siempre arranco con esto*/
+    /*primer funcion (aca es PROC) || function --> PROC */
+    PROC FuncionGetAlturas(nombre);
+    Begin
+        /*los ON CONDITION arriba de todo*/
+        ON CONDITION(KeyError) /*ON CONDITION --> except*/
+        Begin
+            PUT LIST("No se posee la altura del nombre ingresado");
+        End;
+
+        ON CONDITION(Exception)
+        Begin
+            PUT LIST("Otro nombre que no existe");
+        End;
+
+        /* Simulación del acceso al diccionario */
+        IF nombre <> "Juan" &
+           nombre <> "Carlos" &
+           nombre <> "Lorena"
+        THEN
+            SIGNAL CONDITION(KeyError); /*sería lo que capta el error*/
+
+        /* Si existe la clave imprime la altura */
+        IF nombre = "Juan" THEN
+            PUT LIST(180);
+        IF nombre = "Carlos" THEN
+            PUT LIST(160);
+        IF nombre = "Lorena" THEN
+            PUT LIST(170);
+        /* Equivale a alturas["Osvaldo"] */
+        SIGNAL CONDITION(Exception);
+
+        /*como PL/1 utiliza el criterio de REASUNCION, (es decir cuando se
+        levanta una excepcion luego se vuelve a la sentencia siguiente siguiente
+        sin terminar el programa) el else con el mensaje "Imprime mensaje igual"
+        se leeria siempre, no solo cuando no hay problemas, por lo tanto esta 
+        parte no se puede hacer tal cual y por eso no lo ponemos*/
+    End;
+
+    PROC FuncionMultiploDe2;
+    Begin
+        ON CONDITION(TypeError)
+        Begin
+            PUT LIST("El valor ingresado no puede multiplicarse, ingrese un número");
+        End;
+
+        GET LIST(input1); /*leo valor ingresado y lo guardo en input1*/
+        x = input1 * 2;
+        /*aca no hay SIGNAL CONDITION porque no se va a atrapar la excepcion*/
+        PUT LIST("El doble del valor ingresado es ", x);
+        /*finally imprime siempre así que el mensaje lo pongo*/
+        PUT LIST("Esto solo se imprime si la multiplicación fue válida"); 
+    End;
+
+Begin
+    FuncionGetAlturas("Miguel");
+    FuncionMultiploDe2();
+End;
