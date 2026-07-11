@@ -26,6 +26,7 @@ class Moto:
 <details><summary> <code> Respuesta 🖱 </code></summary><br>
 La estructura de datos dada es un <b>Producto Cartesiano</b> pues se define un tipo de dato compuesto por varios atributos. También hay <b>Correspondencia Finita</b> puesto que hay conjunto de valores que pueden accederse mediante a un subíndice (en <i>self._kms[km]</i> hay correspondencia entre el índice km y el valor guardado en una lista). 
 </details>
+<br>
 
 ~~~pascal
 type
@@ -47,6 +48,7 @@ type
 <details><summary> <code> Respuesta 🖱 </code></summary><br>
 La estructura de datos dada presenta <b>Producto Cartesiano</b> pues se definen los tipos de datos <i>Adyacente</i> y <i>Vertice</i> que están compuestos por varios atributos. También hay <b>Recursion</b> pues ambos registros son autorreferenciados mediante punteros: <i>Adyacente</i> contiene el atributo siguiente de tipo <i>Adyacente</i> y lo mismo <i>Vertice</i>, contiene el atributo siguiente del tipo <i>Vertice</i>, es una estructura autoreferenciada. 
 </details>
+<br>
 
 ~~~java
 class Afiliado {
@@ -69,6 +71,7 @@ class Afiliado {
 <details><summary> <code> Respuesta 🖱 </code></summary><br>
 La estructura de datos dada presenta <b>Producto Cartesiano</b> pues hay un tipo de dato Afiliado con varios atributos que lo definen. A su vez, también hay <b>Correspondencia Finita</b> puesto que hay un arreglo de float (credenciales) que se pueden acceder mediante un índice (anio).
 </details>
+<br>
 
 ~~~python
 piezas = ["tuerca", "tornillo", "clavo"]
@@ -84,6 +87,7 @@ herramientas = [
 <details><summary> <code> Respuesta 🖱 </code></summary><br>
 La estructura de datos presenta <b>Correspondencia Finita</b> puesto que piezas y herramientas son colecciones cuyos elementos se acceden mediante un índice, se corresponde cada elemento con una posición en la coleccion. Tambien hay <b>Producto Cartesiano</b> porque cada elemento dentro de herramientas es una tupla formada por un integer y un string.
 </details>
+<br>
 
 ~~~java
 class Alumno {
@@ -101,6 +105,7 @@ class Alumno {
 <details><summary> <code> Respuesta 🖱 </code></summary><br>
 Acá hay <b>Producto Cartesiano</b> pues tenemos una clase Alumno que tiene varios atributos que la definen.
 </details>
+<br>
 
 ~~~C
 typedef struct _nodoArbol {
